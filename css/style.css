@@ -1,0 +1,158 @@
+body {
+    color: white;
+    background-color: lightgray;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 3fr 1fr 1fr;
+    gap: .5em;
+    width: 80%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 3rem;
+    background-color: rgb(179, 16, 97);
+    text-align: center;
+    border-radius: 10px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100px;
+}
+
+aside {
+    font-size: 3rem;
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100px;
+
+}
+
+
+#aside1 {
+    background-color: rgb(34, 34, 231);
+}
+
+#aside2 {
+    background-color: rgb(122, 122, 245);
+}
+
+.column-container {
+    background-color: rgba(11, 194, 81, 0.781);
+    text-align: center;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    border-radius: 10px;
+}
+
+    h2 {
+        display: none;
+    }
+
+article {
+    font-size: 2rem;
+    background-color: rgb(243, 69, 69);
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 12px;
+    margin-bottom: 10px;
+}
+
+footer {
+    font-size: 3rem;
+    background-color: rgb(231, 105, 22);
+    text-align: center;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100px;
+}
+
+@media (min-width: 1000px) {
+
+    html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    color: black;
+    }
+
+    .container {
+        display: grid;
+        width: 100vw;
+        height: 100%;
+        box-sizing: border-box;
+        padding: 0 20px;
+        max-width: none;
+        gap: .5em;
+        grid-template-columns: 1fr 1fr 3fr 1fr 1fr;
+        grid-template-rows: 1fr 2fr 2fr 1fr;
+
+        grid-template-areas:
+            "header header header header header"
+            "aside1 column column column aside2"
+            "aside1 column column column aside2"
+            "footer footer footer footer footer";
+    }
+
+    h1 {
+        grid-area: header;
+        background-color: rgb(236, 143, 159);
+    }
+
+    aside {
+
+        align-items: start;
+
+    }
+
+    #aside1 {
+        grid-area: aside1;
+    }
+
+    .column-container {
+        grid-area: column;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-end;
+        justify-content: center;
+        gap: 1em;
+    }
+
+    h2 {
+        display: block;
+        font-size: 2rem;
+        width: 100%;
+        text-align: center;
+        margin-top: 60px;
+    }
+
+    article {
+        flex: 1;
+        min-height: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 15px;
+    }
+
+    #aside2 {
+        grid-area: aside2;
+        background-color: rgb(34, 34, 231)
+    }
+
+    footer {
+        grid-area: footer;
+    }
+}
